@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <style>
+            .form-field {
+                margin-top: 10px;
+            }
+
+            .main-form {
+                position: absolute;
+                width: 300px;
+                height: 200px;
+                z-index: 15;
+                top: 50%;
+                left: 50%;
+                margin: -100px 0 0 -150px;
+            }
+        </style>
+    </head>
+    <body style="background-color: #aaffaa;">
+        <div class="main-form">
+            <h1>Register</h1>
+            <form style="background-color: #aaaaff;" method="POST" action="">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field">
+                        {{ field.label }}
+                        <br/>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
+                <input class="form-field" type="submit" value="Register"/>
+            </form>
+        </div>
+
+
+    </body>
+</html>
